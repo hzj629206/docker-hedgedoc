@@ -30,12 +30,12 @@ RUN \
     yarn && \
   echo "**** install hedgedoc ****" && \
   if [ -z ${HEDGEDOC_RELEASE+x} ]; then \
-    HEDGEDOC_RELEASE=$(curl -sX GET "https://api.github.com/repos/hedgedoc/hedgedoc/releases/latest" \
+    HEDGEDOC_RELEASE=$(curl -sX GET "https://api.github.com/repos/hzj629206/hedgedoc/releases/latest" \
     | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/hedgedoc.tar.gz -L \
-    "https://github.com/hedgedoc/hedgedoc/releases/download/${HEDGEDOC_RELEASE}/hedgedoc-${HEDGEDOC_RELEASE}.tar.gz" && \
+    "https://github.com/hzj629206/hedgedoc/releases/download/${HEDGEDOC_RELEASE}/hedgedoc-${HEDGEDOC_RELEASE}.tar.gz" && \
   mkdir -p \
     /app/hedgedoc && \
   tar xf /tmp/hedgedoc.tar.gz -C \
